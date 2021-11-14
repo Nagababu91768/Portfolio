@@ -89,12 +89,34 @@ WSGI_APPLICATION = 'Legato.wsgi.application'
 # }
 # }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'naga-db',
+        'USER': 'Naga',
+        'PASSWORD': 'Jeevan$@123456',
+        'HOST': 'ml-django.database.windows.net',
+        'PORT': '1433',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'MARS_Connection': 'True',
+        }
     }
 }
+
+
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
